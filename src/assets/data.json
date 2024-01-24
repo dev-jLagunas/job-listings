@@ -12,7 +12,8 @@
     "contract": "Full Time",
     "location": "USA Only",
     "languages": ["HTML", "CSS", "JavaScript"],
-    "tools": []
+    "tools": [],
+    "bookmarked": false
   },
   {
     "id": 2,
@@ -27,7 +28,8 @@
     "contract": "Part Time",
     "location": "Remote",
     "languages": ["Python"],
-    "tools": ["React"]
+    "tools": ["React"],
+    "bookmarked": false
   },
   {
     "id": 3,
@@ -42,7 +44,8 @@
     "contract": "Part Time",
     "location": "USA Only",
     "languages": ["JavaScript"],
-    "tools": ["React", "Sass"]
+    "tools": ["React", "Sass"],
+    "bookmarked": false
   },
   {
     "id": 4,
@@ -57,7 +60,8 @@
     "contract": "Contract",
     "location": "USA Only",
     "languages": ["CSS", "JavaScript"],
-    "tools": []
+    "tools": [],
+    "bookmarked": false
   },
   {
     "id": 5,
@@ -72,7 +76,8 @@
     "contract": "Full Time",
     "location": "Worldwide",
     "languages": ["JavaScript", "Ruby"],
-    "tools": ["Sass"]
+    "tools": ["Sass"],
+    "bookmarked": false
   },
   {
     "id": 6,
@@ -87,7 +92,8 @@
     "contract": "Full Time",
     "location": "UK Only",
     "languages": ["Ruby"],
-    "tools": ["RoR"]
+    "tools": ["RoR"],
+    "bookmarked": false
   },
   {
     "id": 7,
@@ -102,7 +108,8 @@
     "contract": "Full Time",
     "location": "Worldwide",
     "languages": ["HTML", "JavaScript"],
-    "tools": ["Sass"]
+    "tools": ["Sass"],
+    "bookmarked": false
   },
   {
     "id": 8,
@@ -117,7 +124,8 @@
     "contract": "Full Time",
     "location": "USA Only",
     "languages": ["JavaScript"],
-    "tools": ["Vue", "Sass"]
+    "tools": ["Vue", "Sass"],
+    "bookmarked": false
   },
   {
     "id": 9,
@@ -132,7 +140,8 @@
     "contract": "Full Time",
     "location": "Worldwide",
     "languages": ["JavaScript", "Python"],
-    "tools": ["Django"]
+    "tools": ["Django"],
+    "bookmarked": false
   },
   {
     "id": 10,
@@ -147,7 +156,8 @@
     "contract": "Part Time",
     "location": "Worldwide",
     "languages": ["JavaScript"],
-    "tools": ["React", "Sass"]
+    "tools": ["React", "Sass"],
+    "bookmarked": false
   },
   {
     "id": 11,
@@ -162,7 +172,8 @@
     "contract": "Full Time",
     "location": "Remote",
     "languages": ["Python", "R"],
-    "tools": ["TensorFlow", "PyTorch"]
+    "tools": ["TensorFlow", "PyTorch"],
+    "bookmarked": false
   },
   {
     "id": 12,
@@ -177,7 +188,8 @@
     "contract": "Part Time",
     "location": "USA Only",
     "languages": ["HTML", "CSS", "JavaScript"],
-    "tools": ["React", "Vue"]
+    "tools": ["React", "Vue"],
+    "bookmarked": false
   },
   {
     "id": 13,
@@ -192,7 +204,8 @@
     "contract": "Full Time",
     "location": "Worldwide",
     "languages": ["SQL"],
-    "tools": ["PostgreSQL", "MongoDB"]
+    "tools": ["PostgreSQL", "MongoDB"],
+    "bookmarked": false
   },
   {
     "id": 14,
@@ -207,7 +220,8 @@
     "contract": "Part Time",
     "location": "Remote",
     "languages": ["Java", "Swift"],
-    "tools": ["Android Studio", "Xcode"]
+    "tools": ["Android Studio", "Xcode"],
+    "bookmarked": false
   },
   {
     "id": 15,
@@ -222,6 +236,7 @@
     "contract": "Full Time",
     "location": "Worldwide",
     "languages": ["Python", "JavaScript"],
-    "tools": ["AWS", "Docker"]
+    "tools": ["AWS", "Docker"],
+    "bookmarked": false
   }
 ]

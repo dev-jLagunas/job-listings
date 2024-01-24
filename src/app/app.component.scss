@@ -44,6 +44,31 @@ $font-lg: 2rem;
   }
 }
 
+.filters-container {
+  z-index: 100;
+  width: 90%;
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+  padding: 1rem 1rem;
+  margin-inline: auto;
+  margin-top: 120px;
+  background-color: white;
+  box-shadow: 0px 4px 7px -3px $dark-grayish-cyan;
+  position: relative;
+
+  //Media Query - Starting From 768px
+  @media screen and (min-width: 768px) {
+    width: 75%;
+  }
+
+  //Media Query - Starting From 1440px
+  @media screen and (min-width: 1440px) {
+    width: 65%;
+  }
+}
+
 .full-list-container {
   display: flex;
   flex-direction: column;
@@ -172,6 +197,49 @@ $font-lg: 2rem;
   }
 }
 
+.filter-tag {
+  background-color: $light-grayish-cyan-filter-tablets;
+  height: 2.1rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding-left: $spacing-reg;
+  gap: $spacing-sm;
+  color: $desaturated-dark-cyan;
+  font-weight: 700;
+
+  .close-btn {
+    background-color: $desaturated-dark-cyan;
+    color: white;
+    border: 0;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $very-dark-grayish-cyan;
+    }
+  }
+}
+
+.clear-btn {
+  color: $dark-grayish-cyan;
+  background-color: transparent;
+  border: 0;
+  font-weight: 700;
+  font-size: $font-reg;
+  position: absolute;
+  right: 10px;
+  top: 20px;
+
+  &:hover {
+    cursor: pointer;
+    color: $desaturated-dark-cyan;
+    text-decoration: underline;
+  }
+}
+
 // Img Styles
 .job-img {
   width: 100%;
@@ -181,6 +249,10 @@ $font-lg: 2rem;
 
 .bookmark-icon {
   font-size: $font-lg;
+  color: $desaturated-dark-cyan;
+}
+
+.bookmarked .bookmark-icon {
   color: orange;
 }
 

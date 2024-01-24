@@ -12,7 +12,17 @@
     />
   </picture>
   <main class="full-list-container">
-    @for(job of jobData; track job.id){
+    @if (filters.length > 0) {
+    <div class="filters-container">
+      <span *ngFor="let filter of filters" class="filter-tag">
+        {{ filter }}
+        <button (click)="removeFilter(filter)" class="close-btn">
+          <i class="fa-solid fa-x"></i>
+        </button>
+      </span>
+      <button class="clear-btn" (click)="clearFilters()">Clear</button>
+    </div>
+    } @for(job of filteredJobs; track job.id){
     <article class="job-card-container" [class.featured-job]="job.featured">
       <div class="job-img-wrapper">
         <img [src]="job.logo" alt="Company logo" class="job-img" />
@@ -25,7 +35,11 @@
           } @if (job.featured) {
           <p class="job-featured">FEATURED</p>
           }
-          <button class="svg-btn">
+          <button
+            class="svg-btn"
+            (click)="toggleBookmark(job)"
+            [ngClass]="{ bookmarked: job.bookmarked }"
+          >
             <i class="fa-solid fa-bookmark bookmark-icon"></i>
           </button>
         </div>
@@ -37,16 +51,25 @@
         </div>
       </div>
       <div class="job-details-wrapper">
-        <p class="job-role job-attribute">{{ job.role }}</p>
-        <p class="job-level job-attribute">{{ job.level }}</p>
+        <p class="job-role job-attribute" (click)="addFilter(job.role)">
+          {{ job.role }}
+        </p>
+        <p class="job-level job-attribute" (click)="addFilter(job.level)">
+          {{ job.level }}
+        </p>
         <p
           class="job-languages job-attribute"
           *ngFor="let language of job.languages"
+          (click)="addFilter(language)"
         >
           {{ language }}
         </p>
         @if (job.tools) {
-        <p class="job-tools job-attribute" *ngFor="let tool of job.tools">
+        <p
+          class="job-tools job-attribute"
+          *ngFor="let tool of job.tools"
+          (click)="addFilter(tool)"
+        >
           {{ tool }}
         </p>
         }
