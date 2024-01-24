@@ -1,13 +1,19 @@
 <div class="project-container">
-  <img
-    src="assets/images/bg-header-mobile.svg"
-    alt=""
-    class="svg-banner"
-    role="presentation"
-  />
+  <picture>
+    <source
+      media="(min-width: 768px)"
+      srcset="assets/images/bg-header-desktop.svg"
+    />
+    <img
+      src="assets/images/bg-header-mobile.svg"
+      alt=""
+      class="svg-banner"
+      role="presentation"
+    />
+  </picture>
   <main class="full-list-container">
     @for(job of jobData; track job.id){
-    <article class="job-card-container">
+    <article class="job-card-container" [class.featured-job]="job.featured">
       <div class="job-img-wrapper">
         <img [src]="job.logo" alt="Company logo" class="job-img" />
       </div>
@@ -19,22 +25,30 @@
           } @if (job.featured) {
           <p class="job-featured">FEATURED</p>
           }
+          <button class="svg-btn">
+            <i class="fa-solid fa-bookmark bookmark-icon"></i>
+          </button>
         </div>
         <h2 class="job-position">{{ job.position }}</h2>
         <div class="job-desc-footer-wrapper">
-          <p class="job-posted-at">{{ job.postedAt }}</p>
-          <p class="job-contract">{{ job.contract }}</p>
-          <p class="job-location">{{ job.location }}</p>
+          <p class="job-desc-detail">{{ job.postedAt }}</p>
+          <p class="job-desc-detail">{{ job.contract }}</p>
+          <p class="job-desc-detail">{{ job.location }}</p>
         </div>
       </div>
       <div class="job-details-wrapper">
-        <p class="job-role">{{ job.role }}</p>
-        <p class="job-level">{{ job.level }}</p>
-        <p class="job-languages" *ngFor="let language of job.languages">
+        <p class="job-role job-attribute">{{ job.role }}</p>
+        <p class="job-level job-attribute">{{ job.level }}</p>
+        <p
+          class="job-languages job-attribute"
+          *ngFor="let language of job.languages"
+        >
           {{ language }}
         </p>
         @if (job.tools) {
-        <p class="job-tools" *ngFor="let tool of job.tools">{{ tool }}</p>
+        <p class="job-tools job-attribute" *ngFor="let tool of job.tools">
+          {{ tool }}
+        </p>
         }
       </div>
     </article>

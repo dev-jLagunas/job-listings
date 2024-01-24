@@ -22,7 +22,7 @@ $very-dark-grayish-cyan: hsl(180, 14%, 20%);
   background-color: $light-grayish-cyan-background;
   position: relative;
 
-  //Header SVG
+  //Top banner SVG
   .svg-banner {
     position: absolute;
     top: 0;
@@ -34,26 +34,99 @@ $very-dark-grayish-cyan: hsl(180, 14%, 20%);
 }
 
 .full-list-container {
-  border: 2px solid red;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2.5rem;
 }
 
 .job-card-container {
-  border: 2px solid green;
   margin-inline: auto;
   width: 90%;
+  position: relative;
+  background-color: white;
+  box-shadow: 0px 4px 7px -3px $dark-grayish-cyan;
+  border-radius: 5px;
+  padding-inline: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 
+  //Add margin to first child only
   &:first-child {
-    margin-top: 160px;
+    margin-top: 200px;
   }
+
+  /*****************************************************
+  - Project Styles - Media Query - Starting from 768px -
+  ******************************************************/
+  @media screen and (min-width: 768px) {
+    width: 75%;
+  }
+}
+
+// Featured Job Specific Style
+.featured-job {
+  border-left: 5px solid $desaturated-dark-cyan;
 }
 
 // Wrapper Styles - wrappers are used purely for styling/layout purposes to meet design requirements;
 
 .job-img-wrapper {
-  border: 2px solid red;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: -25px;
+}
+
+.job-desc-wrapper {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.job-desc-header-wrapper {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.job-desc-footer-wrapper {
+  display: flex;
+  justify-content: start;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid lightgrey;
+}
+
+.job-desc-footer-wrapper p:not(:last-child)::after {
+  content: "•";
+  margin-left: 0.5rem;
+  position: relative;
+  top: 0.01rem;
+}
+
+.job-details-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+//Btn Styles
+.svg-btn {
+  border: 0;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  background-color: transparent;
+
+  //Hover Styles
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
 }
 
 // Img Styles
@@ -61,4 +134,63 @@ $very-dark-grayish-cyan: hsl(180, 14%, 20%);
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.bookmark-icon {
+  font-size: 2rem;
+  color: orange;
+}
+
+//Font Styles
+.company-name {
+  color: $desaturated-dark-cyan;
+  font-weight: 400;
+}
+
+.job-new,
+.job-featured {
+  color: white;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.3rem;
+  border-radius: 10px;
+}
+
+.job-new {
+  background-color: $desaturated-dark-cyan;
+}
+
+.job-featured {
+  color: white;
+  background-color: $very-dark-grayish-cyan;
+}
+
+.job-position {
+  font-size: 1rem;
+  color: $very-dark-grayish-cyan;
+
+  //Hover Styles
+  &:hover {
+    color: $desaturated-dark-cyan;
+    cursor: pointer;
+  }
+}
+
+.job-desc-detail {
+  color: $dark-grayish-cyan;
+  font-size: 0.8rem;
+}
+
+.job-attribute {
+  background-color: $light-grayish-cyan-filter-tablets;
+  color: $desaturated-dark-cyan;
+  font-weight: 700;
+  padding: 0.5rem 0.5rem;
+  border-radius: 5px;
+
+  //Hover Styles
+  &:hover {
+    cursor: pointer;
+    background-color: $desaturated-dark-cyan;
+    color: white;
+  }
 }
