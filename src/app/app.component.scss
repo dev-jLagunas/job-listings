@@ -99,7 +99,7 @@ $font-lg: 2rem;
 
   //Media Query - Starting From 1440px
   @media screen and (min-width: 1440px) {
-    width: 65%;
+    width: 70%;
     flex-direction: row;
     justify-content: start;
     align-items: center;
@@ -138,6 +138,7 @@ $font-lg: 2rem;
   //Media Query - Starting From 1440px
   @media screen and (min-width: 1440px) {
     margin-top: 0;
+    margin-left: 1rem;
     padding-right: 15rem;
   }
 }
