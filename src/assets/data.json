@@ -2,7 +2,7 @@
   {
     "id": 1,
     "company": "Photosnap",
-    "logo": "./images/photosnap.svg",
+    "logo": "assets/images/photosnap.svg",
     "new": true,
     "featured": true,
     "position": "Senior Frontend Developer",
@@ -17,7 +17,7 @@
   {
     "id": 2,
     "company": "Manage",
-    "logo": "./images/manage.svg",
+    "logo": "assets/images/manage.svg",
     "new": true,
     "featured": true,
     "position": "Fullstack Developer",
@@ -32,7 +32,7 @@
   {
     "id": 3,
     "company": "Account",
-    "logo": "./images/account.svg",
+    "logo": "assets/images/account.svg",
     "new": true,
     "featured": false,
     "position": "Junior Frontend Developer",
@@ -47,7 +47,7 @@
   {
     "id": 4,
     "company": "MyHome",
-    "logo": "./images/myhome.svg",
+    "logo": "assets/images/myhome.svg",
     "new": false,
     "featured": false,
     "position": "Junior Frontend Developer",
@@ -62,7 +62,7 @@
   {
     "id": 5,
     "company": "Loop Studios",
-    "logo": "./images/loop-studios.svg",
+    "logo": "assets/images/loop-studios.svg",
     "new": false,
     "featured": false,
     "position": "Software Engineer",
@@ -77,7 +77,7 @@
   {
     "id": 6,
     "company": "FaceIt",
-    "logo": "./images/faceit.svg",
+    "logo": "assets/images/faceit.svg",
     "new": false,
     "featured": false,
     "position": "Junior Backend Developer",
@@ -92,7 +92,7 @@
   {
     "id": 7,
     "company": "Shortly",
-    "logo": "./images/shortly.svg",
+    "logo": "assets/images/shortly.svg",
     "new": false,
     "featured": false,
     "position": "Junior Developer",
@@ -107,7 +107,7 @@
   {
     "id": 8,
     "company": "Insure",
-    "logo": "./images/insure.svg",
+    "logo": "assets/images/insure.svg",
     "new": false,
     "featured": false,
     "position": "Junior Frontend Developer",
@@ -122,7 +122,7 @@
   {
     "id": 9,
     "company": "Eyecam Co.",
-    "logo": "./images/eyecam-co.svg",
+    "logo": "assets/images/eyecam-co.svg",
     "new": false,
     "featured": false,
     "position": "Full Stack Engineer",
@@ -137,7 +137,7 @@
   {
     "id": 10,
     "company": "The Air Filter Company",
-    "logo": "./images/the-air-filter-company.svg",
+    "logo": "assets/images/the-air-filter-company.svg",
     "new": false,
     "featured": false,
     "position": "Front-end Dev",
@@ -152,7 +152,7 @@
   {
     "id": 11,
     "company": "Amsterdam AI",
-    "logo": "/images/Amsterdam-colored.svg",
+    "logo": "assets/images/Amsterdam-colored.svg",
     "new": true,
     "featured": false,
     "position": "AI Specialist",
@@ -167,7 +167,7 @@
   {
     "id": 12,
     "company": "level up",
-    "logo": "/images/level-up.svg",
+    "logo": "assets/images/level-up.svg",
     "new": false,
     "featured": true,
     "position": "Frontend Developer",
@@ -182,7 +182,7 @@
   {
     "id": 13,
     "company": "Trace Management",
-    "logo": "/images/Trace-Color.svg",
+    "logo": "assets/images/Trace-Color.svg",
     "new": true,
     "featured": false,
     "position": "Database Administrator",
@@ -196,8 +196,8 @@
   },
   {
     "id": 14,
-    "company": "Montreal",
-    "logo": "/images/Montreal-colored.svg",
+    "company": "Cactus Inc",
+    "logo": "assets/images/Cactus-Color.svg",
     "new": false,
     "featured": true,
     "position": "Mobile Developer",
@@ -211,8 +211,8 @@
   },
   {
     "id": 15,
-    "company": "Babylon LLC",
-    "logo": "assets/images/babylon-white.svg",
+    "company": "Clues",
+    "logo": "assets/images/Clues-Color.svg",
     "new": true,
     "featured": false,
     "position": "DevOps Engineer",

@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+/***************************
+- CSS Reset -
+***************************/
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/***************************
+- Global Styles -
+***************************/
+body {
+  font-family: "League Spartan", sans-serif;
+}

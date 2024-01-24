@@ -1,0 +1,64 @@
+/***************************
+- Variables -
+***************************/
+
+// Primary
+$desaturated-dark-cyan: hsl(180, 29%, 50%);
+
+// Neutral
+$light-grayish-cyan-background: hsl(180, 52%, 96%);
+$light-grayish-cyan-filter-tablets: hsl(180, 31%, 95%);
+$dark-grayish-cyan: hsl(180, 8%, 52%);
+$very-dark-grayish-cyan: hsl(180, 14%, 20%);
+
+/************************************************
+- Project Styles - Mobile First - Up to 768px -
+**************************************************/
+
+// Container Styles - containers are used to wrap semantically related content together;
+
+.project-container {
+  height: max-content;
+  background-color: $light-grayish-cyan-background;
+  position: relative;
+
+  //Header SVG
+  .svg-banner {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    background-color: $desaturated-dark-cyan;
+  }
+}
+
+.full-list-container {
+  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.job-card-container {
+  border: 2px solid green;
+  margin-inline: auto;
+  width: 90%;
+
+  &:first-child {
+    margin-top: 160px;
+  }
+}
+
+// Wrapper Styles - wrappers are used purely for styling/layout purposes to meet design requirements;
+
+.job-img-wrapper {
+  border: 2px solid red;
+}
+
+// Img Styles
+.job-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
