@@ -28,7 +28,7 @@ This project was a great opportunity to deepen my understanding of Angular and T
 
 ### Desktop View
 
-![Desktop view](/assets/images/jobs-desktop.png)
+![Desktop view](assets/images/jobs-desktop.png)
 
 ## Getting Started
 
