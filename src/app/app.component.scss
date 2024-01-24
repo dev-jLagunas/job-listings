@@ -11,6 +11,16 @@ $light-grayish-cyan-filter-tablets: hsl(180, 31%, 95%);
 $dark-grayish-cyan: hsl(180, 8%, 52%);
 $very-dark-grayish-cyan: hsl(180, 14%, 20%);
 
+// Spacing
+$spacing-sm: 0.5rem;
+$spacing-reg: 1rem;
+$spacing-lg: 2rem;
+
+// Font Sizes
+$font-sm: 0.8rem;
+$font-reg: 1rem;
+$font-lg: 2rem;
+
 /************************************************
 - Project Styles - Mobile First - Up to 768px -
 **************************************************/
@@ -21,6 +31,7 @@ $very-dark-grayish-cyan: hsl(180, 14%, 20%);
   height: max-content;
   background-color: $light-grayish-cyan-background;
   position: relative;
+  padding-bottom: 5rem;
 
   //Top banner SVG
   .svg-banner {
@@ -46,27 +57,35 @@ $very-dark-grayish-cyan: hsl(180, 14%, 20%);
   background-color: white;
   box-shadow: 0px 4px 7px -3px $dark-grayish-cyan;
   border-radius: 5px;
-  padding-inline: 1rem;
+  padding-inline: $spacing-reg;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: $spacing-reg;
 
   //Add margin to first child only
   &:first-child {
     margin-top: 200px;
   }
 
-  /*****************************************************
-  - Project Styles - Media Query - Starting from 768px -
-  ******************************************************/
+  //Media Query - Starting From 768px
   @media screen and (min-width: 768px) {
     width: 75%;
+  }
+
+  //Media Query - Starting From 1440px
+  @media screen and (min-width: 1440px) {
+    width: 65%;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    padding-inline: $spacing-lg;
+    padding-block: $spacing-reg;
   }
 }
 
 // Featured Job Specific Style
 .featured-job {
-  border-left: 5px solid $desaturated-dark-cyan;
+  border-left: 7px solid $desaturated-dark-cyan;
 }
 
 // Wrapper Styles - wrappers are used purely for styling/layout purposes to meet design requirements;
@@ -76,33 +95,52 @@ $very-dark-grayish-cyan: hsl(180, 14%, 20%);
   width: 50px;
   position: absolute;
   top: -25px;
+
+  //Media Query - Starting From 1440px
+  @media screen and (min-width: 1440px) {
+    position: static;
+    height: 80px;
+    width: 80px;
+  }
 }
 
 .job-desc-wrapper {
-  margin-top: 2rem;
+  margin-top: $spacing-lg;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: $spacing-sm;
+
+  //Media Query - Starting From 1440px
+  @media screen and (min-width: 1440px) {
+    margin-top: 0;
+    padding-right: 15rem;
+  }
 }
 
 .job-desc-header-wrapper {
   display: flex;
   justify-content: start;
   align-items: center;
-  gap: 1rem;
+  gap: $spacing-reg;
 }
 
 .job-desc-footer-wrapper {
   display: flex;
   justify-content: start;
-  gap: 1rem;
-  padding-bottom: 1rem;
+  gap: $spacing-reg;
+  padding-bottom: $spacing-reg;
   border-bottom: 1px solid lightgrey;
+
+  //Media Query - Starting From 1440px
+  @media screen and (min-width: 1440px) {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
 }
 
 .job-desc-footer-wrapper p:not(:last-child)::after {
   content: "•";
-  margin-left: 0.5rem;
+  margin-left: $spacing-sm;
   position: relative;
   top: 0.01rem;
 }
@@ -110,8 +148,13 @@ $very-dark-grayish-cyan: hsl(180, 14%, 20%);
 .job-details-wrapper {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-lg;
+
+  //Media Query - Starting From 1440px
+  @media screen and (min-width: 1440px) {
+    margin-top: $spacing-lg;
+  }
 }
 
 //Btn Styles
@@ -137,20 +180,20 @@ $very-dark-grayish-cyan: hsl(180, 14%, 20%);
 }
 
 .bookmark-icon {
-  font-size: 2rem;
+  font-size: $font-lg;
   color: orange;
 }
 
 //Font Styles
 .company-name {
   color: $desaturated-dark-cyan;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .job-new,
 .job-featured {
   color: white;
-  font-size: 0.8rem;
+  font-size: $font-sm;
   padding: 0.3rem 0.3rem;
   border-radius: 10px;
 }
@@ -165,7 +208,7 @@ $very-dark-grayish-cyan: hsl(180, 14%, 20%);
 }
 
 .job-position {
-  font-size: 1rem;
+  font-size: $font-reg;
   color: $very-dark-grayish-cyan;
 
   //Hover Styles
@@ -173,18 +216,23 @@ $very-dark-grayish-cyan: hsl(180, 14%, 20%);
     color: $desaturated-dark-cyan;
     cursor: pointer;
   }
+
+  //Media Query - Starting From 1440px
+  @media screen and (min-width: 1440px) {
+    font-size: 1.3rem;
+  }
 }
 
 .job-desc-detail {
   color: $dark-grayish-cyan;
-  font-size: 0.8rem;
+  font-size: $font-sm;
 }
 
 .job-attribute {
   background-color: $light-grayish-cyan-filter-tablets;
   color: $desaturated-dark-cyan;
   font-weight: 700;
-  padding: 0.5rem 0.5rem;
+  padding: $spacing-sm $spacing-sm;
   border-radius: 5px;
 
   //Hover Styles
@@ -192,5 +240,10 @@ $very-dark-grayish-cyan: hsl(180, 14%, 20%);
     cursor: pointer;
     background-color: $desaturated-dark-cyan;
     color: white;
+  }
+
+  //Media Query - Starting From 1440px
+  @media screen and (min-width: 1440px) {
+    height: max-content;
   }
 }
