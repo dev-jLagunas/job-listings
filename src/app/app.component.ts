@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs';
@@ -10,7 +9,7 @@ import { AsyncPipe } from '@angular/common';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, AsyncPipe],
+  imports: [CommonModule, AsyncPipe],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
