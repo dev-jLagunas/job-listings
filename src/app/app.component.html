@@ -14,15 +14,16 @@
   <main class="full-list-container">
     @if (filters.length > 0) {
     <div class="filters-container">
-      <span *ngFor="let filter of filters" class="filter-tag">
+      @for (filter of filters; track $index) {
+      <span class="filter-tag">
         {{ filter }}
         <button (click)="removeFilter(filter)" class="close-btn">
           <i class="fa-solid fa-x"></i>
-        </button>
-      </span>
+        </button> </span
+      >}
       <button class="clear-btn" (click)="clearFilters()">Clear</button>
     </div>
-    } @for(job of filteredJobs; track job.id){
+    } @for(job of filteredJobs$ | async; track job.id){
     <article class="job-card-container" [class.featured-job]="job.featured">
       <div class="job-img-wrapper">
         <img [src]="job.logo" alt="Company logo" class="job-img" />
