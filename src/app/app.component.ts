@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError, map } from 'rxjs';
+import { catchError, map, of } from 'rxjs';
 import { Job } from './job.model';
 import { AsyncPipe } from '@angular/common';
 
@@ -65,15 +65,8 @@ export class AppComponent implements OnInit {
     }
   }
 
-  clearFilters() {
+  clearFilters(): void {
     this.filters = [];
-    if (this.jobData$) {
-      this.jobData$.subscribe((data: Job[]) => {
-        this.filteredJobs$ = new Observable((subscriber) => {
-          subscriber.next(data);
-          subscriber.complete();
-        });
-      });
-    }
+    this.filteredJobs$ = this.jobData$;
   }
 }
