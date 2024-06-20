@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError, map, of } from 'rxjs';
+import { catchError, map } from 'rxjs';
 import { Job } from './job.model';
 import { AsyncPipe } from '@angular/common';
 
@@ -47,20 +47,18 @@ export class AppComponent implements OnInit {
     this.filterJobs();
   }
 
-  filterJobs() {
+  filterJobs(): void {
     if (this.jobData$) {
       this.filteredJobs$ = this.jobData$.pipe(
-        map((jobs: Job[]) => {
-          return jobs.filter((job: Job) =>
-            this.filters.every(
-              (filter) =>
-                job.role === filter ||
-                job.level === filter ||
-                job.languages.includes(filter) ||
-                job.tools.includes(filter)
+        map((jobs: Job[]) =>
+          jobs.filter((job: Job) =>
+            this.filters.every((filter) =>
+              [job.role, job.level, ...job.languages, ...job.tools].includes(
+                filter
+              )
             )
-          );
-        })
+          )
+        )
       );
     }
   }

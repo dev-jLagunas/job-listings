@@ -1,4 +1,3 @@
-// Structure of job object in data.json
 export interface Job {
   id: number;
   company: string;
