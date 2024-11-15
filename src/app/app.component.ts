@@ -1,22 +1,19 @@
 import { Component, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-
 import { Job } from './job.model';
-import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, AsyncPipe],
+  imports: [CommonModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  jobData = signal<Job[]>([]); // Signal for job data
-  filters = signal<string[]>([]); // Signal for filters
+  jobData = signal<Job[]>([]);
+  filters = signal<string[]>([]);
 
-  // Computed signal for filtered jobs
   filteredJobs = computed(() =>
     this.jobData().filter((job) =>
       this.filters().every((filter) =>
