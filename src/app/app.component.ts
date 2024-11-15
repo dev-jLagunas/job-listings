@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError, map } from 'rxjs';
+
 import { Job } from './job.model';
 import { AsyncPipe } from '@angular/common';
 
@@ -13,58 +12,44 @@ import { AsyncPipe } from '@angular/common';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
-  jobData$: Observable<Job[]> | undefined;
-  filters: string[] = [];
-  filteredJobs$: Observable<Job[]> | undefined;
+export class AppComponent {
+  jobData = signal<Job[]>([]); // Signal for job data
+  filters = signal<string[]>([]); // Signal for filters
 
-  constructor(private http: HttpClient) {}
+  // Computed signal for filtered jobs
+  filteredJobs = computed(() =>
+    this.jobData().filter((job) =>
+      this.filters().every((filter) =>
+        [job.role, job.level, ...job.languages, ...job.tools].includes(filter)
+      )
+    )
+  );
 
-  ngOnInit(): void {
-    this.jobData$ = this.http.get<Job[]>('/assets/data.json').pipe(
-      catchError((error) => {
-        console.error('Error fetching job data:', error);
-        return throwError(
-          () => new Error('Error fetching job data. Please try again later.')
-        );
-      })
-    );
-
-    this.filterJobs();
+  constructor(private http: HttpClient) {
+    this.loadJobs();
   }
 
-  toggleBookmark(job: Job) {
+  private loadJobs(): void {
+    this.http.get<Job[]>('/assets/data.json').subscribe({
+      next: (jobs) => this.jobData.set(jobs),
+      error: (error) => console.error('Error fetching job data:', error),
+    });
+  }
+
+  toggleBookmark(job: Job): void {
     job.bookmarked = !job.bookmarked;
+    this.jobData.update((jobs) => [...jobs]);
   }
 
-  addFilter(filter: string) {
-    this.filters.push(filter);
-    this.filterJobs();
+  addFilter(filter: string): void {
+    this.filters.update((current) => [...current, filter]);
   }
 
-  removeFilter(filter: string) {
-    this.filters = this.filters.filter((f) => f !== filter);
-    this.filterJobs();
-  }
-
-  filterJobs(): void {
-    if (this.jobData$) {
-      this.filteredJobs$ = this.jobData$.pipe(
-        map((jobs: Job[]) =>
-          jobs.filter((job: Job) =>
-            this.filters.every((filter) =>
-              [job.role, job.level, ...job.languages, ...job.tools].includes(
-                filter
-              )
-            )
-          )
-        )
-      );
-    }
+  removeFilter(filter: string): void {
+    this.filters.update((current) => current.filter((f) => f !== filter));
   }
 
   clearFilters(): void {
-    this.filters = [];
-    this.filteredJobs$ = this.jobData$;
+    this.filters.set([]);
   }
 }

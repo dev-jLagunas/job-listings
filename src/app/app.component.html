@@ -12,9 +12,9 @@
     />
   </picture>
   <main class="full-list-container">
-    @if (filters.length > 0) {
+    @if (filters().length > 0) {
     <div class="filters-container">
-      @for (filter of filters; track $index) {
+      @for (filter of filters(); track $index) {
       <span class="filter-tag">
         {{ filter }}
         <button (click)="removeFilter(filter)" class="close-btn">
@@ -23,7 +23,7 @@
       >}
       <button class="clear-btn" (click)="clearFilters()">Clear</button>
     </div>
-    } @for(job of filteredJobs$ | async; track job.id){
+    } @for(job of filteredJobs(); track job.id){
     <article class="job-card-container" [class.featured-job]="job.featured">
       <div class="job-img-wrapper">
         <img [src]="job.logo" alt="Company logo" class="job-img" />
@@ -65,15 +65,11 @@
         >
           {{ language }}
         </p>
-        @if (job.tools) {
-        <p
-          class="job-tools job-attribute"
-          *ngFor="let tool of job.tools"
-          (click)="addFilter(tool)"
-        >
+        @if (job.tools) { @for (tool of job.tools; track $index) {
+        <p class="job-tools job-attribute" (click)="addFilter(tool)">
           {{ tool }}
         </p>
-        }
+        } }
       </div>
     </article>
     }
